@@ -1,0 +1,12 @@
+{
+	"name": "stress-node",
+	"author": "Ariel Flesler <aflesler@gmail.com>",
+	"version": "1.0.0",
+	"description": "Stress test library for Node JS",
+	"keywords": ["stress", "test", "nodejs", "node", "development", "debugging"],
+	"license": "MIT",
+	"repository": "git://github.com/flesler/stress-node",
+	"main": "./index.js",
+	"engines": { "node": "*" },
+	"dependencies": {}
+}
