@@ -43,6 +43,7 @@ module.exports = function(opts, done) {
 			}
 		});
 
+		// FIXME: Doesn't seem to be working
 		req.setTimeout(opts.timeout);
 		req.on('error', function(e) {
 			error(e.code);

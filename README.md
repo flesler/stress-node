@@ -57,3 +57,7 @@ Both functions will receive a report object that looks like this:
 I also made a CLI server that runs a stress test using this library.
 
 Go check it out at https://github.com/flesler/stress-node-server.
+
+# TODOs
+
+- `timeout` setting doesn't seem to be working correctly
