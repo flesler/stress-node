@@ -9,9 +9,13 @@ module.exports = function(opts, done) {
 		port: u.port,
 		path: u.path,
 		method: opts.method,
+		agent: new http.Agent(),
 		// TODO
 		headers: null
 	};
+	// WARNING: if you get EMFILE errors, you're reaching the limit
+	// https://github.com/joyent/node/issues/793
+	info.agent.maxSockets = opts.concurrent;
 
 	var responses = {}, errors = {};
 	var report = {
@@ -24,6 +28,7 @@ module.exports = function(opts, done) {
 		total: opts.amount,
 		start: new Date()
 	};
+
 
 	while (opts.concurrent--) {
 		request();
@@ -48,6 +53,7 @@ module.exports = function(opts, done) {
 		req.on('error', function(e) {
 			error(e.code);
 		});
+
 		req.end(opts.data);
 	}
 
